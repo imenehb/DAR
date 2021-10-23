@@ -43,13 +43,33 @@ public class StringManipulator {
     }
 
     public void toUpperCase(){
-        t=s.toUpperCase();
-	        System.out.println("uppercase : "+t);
+        
+        String r="";
+        for(int i=0;i<s.length();i++){
+            int ascii=s.charAt(i);
+            if(ascii>90){
+                ascii=ascii-32;
+                char low=(char)ascii;
+                r=r+low;}
+            else r=r+(char)ascii;
+
+        }
+        System.out.println("uppercase : "+r);
     }
 
     public void toLowerCase(){
-        t=s.toLowerCase();
-	        System.out.println("lowercase : "+t);
+        String r="";
+        for(int i=0;i<s.length();i++){
+            int ascii=s.charAt(i);
+            if(ascii<=90){
+                ascii=ascii+32;
+                char low=(char)ascii;
+                r=r+low;}
+            else r=r+(char)ascii;
+
+        }
+
+        System.out.println("lowercase : "+r);
     }
 
     public void getVowelNumber(){
