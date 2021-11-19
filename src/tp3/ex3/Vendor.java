@@ -14,7 +14,9 @@ public class Vendor extends Thread{
         try {
             sleep(2000);
                 System.out.println("Vendor "+this.getName()+" said 'isi sandwich is ready'");
-                //todo : prepare a sandwich, set it as ready and notify a student
+                synchronized (isiSandwich){
+                isiSandwich.notifyAll();
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
